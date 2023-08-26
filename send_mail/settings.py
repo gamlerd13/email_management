@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',  # lib para conectar facil el front
     'rest_framework',# rest instalado
+    'coreapi', # lib para documentar
     # 'api',
     'clients',
     'tasks',
@@ -143,6 +144,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# * Para la documentacion
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
 
 # * Esto es para permitir a los servidores externos conectarse a la api, es una lista, asi que pueden haber muchos
 CORS_ALLOWED_ORIGINS = [
